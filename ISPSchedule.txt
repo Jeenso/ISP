@@ -1,0 +1,42 @@
+﻿Saetbyull Park
+January 30, 2017
+Since the process of making a game/software might change unexpectedly (i.e. more time spent on debugging, unsatisfactory product) I am keeping the schedule vague. My final schedule/journal will have my work logged by the hour. My schedule is roughly following the Software Development Life Cycle. I do not know if it reflects the real cycle accurately since I am fitting development into 2-4 weeks. Generally I’d try to work from 8 AM-5 PM with breaks. 
+
+
+Saturday, February 18-Sunday, February 19
+* Learn Git (version control system)
+*Sunday, February 19-Tuesday, February 20
+* Review Python (coding language) basics
+* Learn some specific functions of Python for game program
+Tuesday, February 21
+* Write reviews of other text based games
+* Possibly interview Mr. Lloyd, who developed a mod for a game once
+
+
+Requirements Analysis
+Tuesday, February 21-Thursday, February 23
+* Define purpose and functions of game and write up
+* Come up with a plot/alternative plots for “customer” (Dr. Kahler)
+* Discuss with “customer”
+
+
+*Design - Friday, February 24-Sunday, February 26
+* Draw up storyboard/character sheets
+* Outline complete story/routes/user choices
+
+
+*Development - Sunday, February 26-Thursday, March 2
+* Review Python
+* Code
+* Debug
+
+
+*Testing - Thursday, March 2-Friday, March 3
+
+
+Release/Maintenance - Friday, March 3-Saturday, March 4
+* Review with “customer”
+* Others test
+
+
+*May take more time
