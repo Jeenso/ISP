@@ -1,0 +1,200 @@
+﻿Software Requirements Specification
+
+
+--------------------
+1.         Introduction
+--------------------
+1.1         Purpose
+
+
+[Horror Game], version 1.0 (temporary name) will be a text-based adventure game of the horror genre that can be played in a web browser. The player can explore various rooms and pick up clues and items to help them solve puzzles and escape the overall building. This specification describes the functions and expectations of the program.
+
+
+1.2         Document Conventions
+
+
+None.
+1.3         Intended Audience and Reading Suggestions
+
+
+This document is for the use of developers and the customer. This document will not be shown to testers. The specifications describe the product, its functions, on what platforms it is used, and its expected qualities. It is fine to read in any order.
+1.4         References
+
+
+There are no references.
+--------------------
+2.         Overall Description
+--------------------
+
+
+2.1         Product Perspective
+
+
+[Horror Game] is not affiliated with any prequel or other game. It is based off of two types of games. Firstly, the format is that of a test-based game, similar to those popular in the late 1900s. The user received all information from reading the dialogue that appeared and input commands that were processed based on the verb and object. These games would have a series of rooms (or dungeons) that the user explored and they could collect items to fight monsters. [Horror Game] has a series of rooms and items that the user can interact with in order to solve puzzles or open doors. The user input and plot is based off of “choose your adventure” games. Instead of typing in phrases such as “take a knife” or “go west”, the user will type 1, 2, 3, etc. for the options or dialogue already provided for them. For example, the user will put 1 to correspond to “1: Take the left exit.” 
+2.2         Product Functions
+
+
+The game should provide a response to user input, keep a dictionary of the rooms and a dictionary of the items that the user can interact with. The game generates and ending based on dialogue choices made by the player. 
+
+
+Dialogue: The game uses a command line interface. The game does not have a vocabulary like typical text based games. Instead, the user will input a number based on the correlating dialogue choice. The user enters the number or command (such as help or items to view their inventory) and the system describes a response to the command. 
+
+
+Rooms: Each room has its own dialogue; the user moves from room to room by choosing dialogue such as “take the right door”. Sometimes an event with other characters is triggered by entering a room for the first or second time. The room functions keep track of which items or events can occur in each particular room.
+
+
+Items: The player may pick up various items such as keys to be used at other locations or puzzles in the game. These puzzles take place within rooms and may be a locked door, a passcode, or a logical problem. The items function tracks what the user has picked up and how user interactions with other rooms/objects change after picking up an item. 
+
+
+2.3         User Classes and Characteristics
+
+
+Any user will be able to play this game. The instructions do not require special knowledge. 
+2.4         Operating Environment
+
+
+The game will run within the web browser. Any system with access to the internet and a browser can run it. 
+2.5         Design and Implementation Constraints
+
+
+There are no constraints. 
+
+
+2.6         User Documentation
+
+
+No extra documentation will be included with the game. Directions will be said at the beginning.
+2.7         Assumptions and Dependencies
+
+
+There are no assumptions or dependencies. 
+--------------------
+3.         External Interface Requirements
+--------------------
+3.1         User Interfaces
+
+
+The user interacts with the game through a command line interface. The user is prompted for a typed response that corresponds to options that appear onscreen. If the user types and invalid response, the system asks the user the question again. Keyboard shortcuts for inventory or help will appear at the start of the game. 
+3.2         Hardware Interfaces
+
+
+A computer or mobile device can be used to run the web page.
+3.3         Software Interfaces
+
+
+The game does not store any data and should run with any software.
+
+
+4.         System Features
+4.1         Dialogue
+
+
+4.1.1          Description
+
+
+The dialogue is the main piece of the game. It controls the involvement of the other features and the value of variables in the code. The user inputs a number that aligns with a dialogue choice, or a command that is introduced at the beginning of the game (help, inventory, etc). 
+
+
+4.1.2          Stimulus/Response Sequences
+
+
+Depending on the user’s input, the ending of the plot will change. Dialogue does not only include the character’s actions but also interactions with other characters and items in the plot. 
+
+
+4.1.3          Functional Requirements
+ 
+Question and answer: The system must be able to generate the appropriate prompt and choices for the user at certain points of the plot. 
+Error: The system must return a message for invalid response.
+Command words: At the start, the game lists certain words that can be used at any time in the game, such as help, inventory, stats, etc. 
+4.2           Rooms
+
+
+4.2.1          Description
+
+
+Each room contains a description. Some has items that can be interacted with and some contain plot events that are triggered by entering a room for the first or second time. The room functions keep track of which items or events can occur in each particular room. 
+
+
+4.2.2          Stimulus/Response Sequences
+
+
+If the room contains a plot event, that will be included with the initial description of the room. Typically, the user will be prompted to make a choice that affects the ending with these events. 
+
+
+If the room contains items, the user can discover them through inspection. Usually there will be dialogue choices such as “examine the desk” or the like. 
+
+
+The dialogue of some rooms may change after picking up an item or some other interaction. 
+
+
+4.2.3          Functional Requirements
+
+
+Dialogue: The room function must generate a description according to the room. 
+4.3         Items/Inventory
+
+
+4.3.1          Description
+
+
+The player must pick up items to be able to progress in the game. They are used with other items or to pass through certain rooms. The items function tracks what the user has picked up and how user interactions with other rooms/objects change after picking up an item. The user may access their inventory at any time. 
+
+
+4.3.2          Stimulus/Response Sequences
+
+
+If the user inputs “inventory” or “items”, he or she will be able to see the items they have picked up. 
+
+
+The dialogue on certain objects change after picking up an item. 
+
+
+4.3.3          Functional Requirements
+
+
+When items are placed in the inventory, there should be a change in the rooms function as well. 
+5.         Other Nonfunctional Requirements
+5.1   Performance Requirements
+
+
+The system should respond to the user input shortly. There are no other performance requirements. 
+5.2         Safety Requirements
+
+
+There are no safety requirements.
+5.3         Security Requirements
+There are no security requirements.
+
+
+5.4         Software Quality Attributes
+
+
+Adaptability - The product, because of its simple textual nature, should adjust to the screen of any device used.
+Availability - The product should be available to any system with a browser and any person who is able to use a computer. 
+Portability - The system should be portable any device with a web browser and internet connection. There are no other specific portability requirements. 
+Reliability - The system should not crash, unless caused by an outside interruption.
+6.         Other Requirements
+
+
+There are no other requirements.
+
+
+Appendix A: Glossary
+
+
+None.
+
+
+Appendix B: Analysis Models
+
+
+None at the time. 
+
+
+Appendix C: To Be Determined List
+
+
+The official name of the product.
+
+
+Notes: I do not know if the functional requirements are adequate… I may update this document with some flow charts.
