@@ -1,5 +1,8 @@
 from inspect import isfunction
 
+print "What is your name?"
+name = raw_input("> ")
+
 # print read me document before starting game -> tells instructions and guidelines
 # update software specs
 
@@ -11,6 +14,13 @@ library_list = ["Library", "library", "Lib", "lib"]
 bathroom_list = ["Bathroom", "bathroom", "bath", "Bath"]
 foyer_list = ["Foyer", "foyer"]
 stairs_list = ["stairs", "steps", "Stairs", "Steps"]
+basement_list = ["Basement", "basement", "Cellar", "cellar"]
+hallway_list = ["Hallway", "hallway", "hall", "Hall", "corridor", "Corridor"]
+lroom_list = ["left room", "Left room", "Left Room", "left", "Left"]
+lgroom_list = ["large room", "Large room", "Large Room", "large", "Large"]
+rroom_list = ["right room", "Right room", "Right Room", "right", "Right"]
+comproom_list = ["computer room", "comp room", "Computer Room", "Computer room", "Comp Room", "Comp room", "computer", "comp", "Computer", "Comp"]
+attic_list = ["Attic", "attic"]
     # rooms leading to stairs will need a location value (true or false)
     # in stairs class, use the conditional to decide where to go
     # will the stairs lead to basement and attic as well or will those have their own classes
@@ -23,13 +33,13 @@ def library():
         print "Living Room    Bathroom    Foyer"
 
 ## dialogue dictionaries
-doors_dict = {'foyer': "Dining Room    Living Room    Library    Upstairs",
+doors_dict = {'foyer': "Dining Room    Living Room    Library    Stairs",
     'living': "Dining Room    Kitchen    Library    Bathroom    Foyer",
     'dining': "Kitchen    Living Room    Foyer",
     'kitchen': "Dining Room    Living Room",
     'bath1': "Living Room    Library",
     'library': library,
-    'hallway': "Downstairs    Large Bedroom    Left Bedroom    Right Bedroom    Computer Room",
+    'hallway': "Stairs    Large Bedroom    Left Bedroom    Right Bedroom    Computer Room",
     'b_room': "Hallway    Bathroom",
     'p_room': "Hallway    Bathroom",
     'bathp': "Large Bedroom",
@@ -61,8 +71,13 @@ ticks = False
 basementv = False
 knifev = False
 screwdriverv = False
+drawersv = 0
 # drain item
 friendship = 0
+null = False
+bath1v = False
+bathpv = False
+bathjv = False
 
 ## inventory
 inventory = { } # figure out how to print dictionaries
@@ -118,7 +133,7 @@ a previous unnoticed hole. \"Ah! What are those doing there?\""""
 
 # dining room
 def paintings():
-    print "\nThe paintings on either side of the center portrait seem \nto have been done professionally. The first depicts a couple,""
+    print "\nThe paintings on either side of the center portrait seem \nto have been done professionally. The first depicts a couple,"
     print "possibly the previous owners of the house. The last portrait \nis of a young boy with a large grin. The middle frame is empty"
     print "and whatever used to be there was replaced by a cartoon \nstrip. A girl waves from the first panel, saying, \"Let\'s have"
     print "a scavenger hunt!\" The next three panels had a chair, a \nbook, and the word 'arachnids'.\n"
@@ -126,8 +141,10 @@ def paintings():
 # kitchen
 def drawers():
     global friendship
-    drawersv =+ 1
-    if drawersv > 2:
+    global knifev
+    global drawersv
+    drawersv += 1
+    if drawersv < 2:
         print "Vinh pulls the drawer open slightly. \"Eh, nothing here.\""
     elif knifev == True:
         print "The drawer does not contain anything else."
@@ -137,48 +154,53 @@ def drawers():
         print "\t1: Trust his judgment. \n\t2: Check the drawer."
         c = raw_input("> ")
         print "\n"
-            if c == "1":
-                friendship =+ 1
-                return 'kitchen'
-            elif c == "2":
-                knifev = True
-                print "I opened the drawer fully and find a knife at the back."
-                return 'kitchen'
-            else:
-                print "Please enter either 1 or 2."
-                return 'kitchen'
+        if c == "1":
+            friendship =+ 1
+            return 'kitchen'
+        elif c == "2":
+            knifev = True
+            print "I opened the drawer fully and find a knife at the back."
+            return 'kitchen'
+        else:
+            print "Please enter either 1 or 2."
+            return 'kitchen'
 
 def cabinet():
-    print "\nInside the cabinet, there was a bulky toolbox with a \ncombination lock."
+    global crowbarv
+    global hammerv
+    global screwdriverv
+    global friendship
+    print "\nInside the cabinet, there was a bulky toolbox with a \ncombination lock. It has three dials."
     print "Enter the code."
     c = raw_input("> ")
     print "\n"
-        if c == "777":
-            crowbar = True
-            hammerv = True
-            screwdriverv = True
-            print "\nThe lock clicks and the lid opens on its own. Inside the toolbox\n are a large hammer, a crowbar, and a screwdriver."
-            print "\n\t1: Ask your friends to take one each. \n\t2: Carry them yourself."
-            ch = raw_input("> ")
-            print "\n"
-                if ch == "1":
-                    friendship =+ 1
-                    print "\"I\'ll take this hammer,\" Vinh says as he struggles to lift it."
-                    print "\"Er, I\'ll  have the screwdriver, then...\" Alex picked it out."
-                    print "That just left the crowbar to me. I wonder what we can use these for."
-                    return 'kitchen'
-                elif ch == "2":
-                    print "I closed the toolbox and tried to lift it. Gosh, it was heavy. I \nskipped arm day too often to be able to carry this."
-                    print "\"Dude, let me help you. You\'re struggling big time.\" Vinh and Alex \nended up having to take a tool each so we could transport them.""
-                else:
-                    print "Please enter either 1 or 2."
-                    return 'kitchen'
-        else:
-            print "Apparently, that wasn\'t right. The toolbox stays shut."
+    if c == "777":
+        crowbarv = True
+        hammerv = True
+        screwdriverv = True
+        print "\nThe lock clicks and the lid opens on its own. Inside the toolbox\n are a large hammer, a crowbar, and a screwdriver."
+        print "\n\t1: Ask your friends to take one each. \n\t2: Carry them yourself."
+        ch = raw_input("> ")
+        print "\n"
+        if ch == "1":
+            friendship =+ 1
+            print "\"I\'ll take this hammer,\" Vinh says as he struggles to lift it."
+            print "\"Er, I\'ll  have the screwdriver, then...\" Alex picked it out."
+            print "That just left the crowbar to me. I wonder what we can use these for."
             return 'kitchen'
+        elif ch == "2":
+            print "I closed the toolbox and tried to lift it. Gosh, it was heavy. I \nskipped arm day too often to be able to carry this."
+            print "\"Dude, let me help you. You\'re struggling big time.\" Vinh and Alex \nended up having to take a tool each so we could transport them."
+        else:
+            print "Please enter either 1 or 2."
+            return 'kitchen'
+    else:
+        print "Apparently, that wasn\'t right. The toolbox stays shut."
+        return 'kitchen'
 
 # bathroom 1
 def bathtub():
+    global crowbarv
     print "\nThe bathtub might have been white originally but is brown \nfrom years of dirt. The only shining part is the drain, which \nis loose."
     print "\nLook in the drain?"
     print "\t1: Yes.\n\t2: No."
@@ -206,22 +228,54 @@ def lib_shelves():
     c = raw_input("> ")
     print "\n"
     if c == "1":
-        #3 golden spined books
-        #A science text about Jose Delgado
+        print "This shelf appears to contain mostly factual references, especially \nscience texts. Three of them have golden spines."
+        print "\n\t1: Read a book. \n\t2: Never mind."
+        c = raw_input("> ")
+        print "\n"
+        if c == "1":
+            # A science text about Jose Delgado
+            return 'library'
+        elif c == "2":
+            return 'library'
+        else:
+            print "Please enter either 1 or 2."
+            return 'library'
         return 'library'
     elif c == "2":
-        #2 golden spined books
-        #A children's tale
+        print "This shelf appears to contain fiction books, including several \nclassics. Two of them have golden spines."
+        print "\n\t1: Read a book. \n\t2: Never mind."
+        c = raw_input("> ")
+        print "\n"
+        if c == "1":
+            # A children's tale
+            return 'library'
+        elif c == "2":
+            return 'library'
+        else:
+            print "Please enter either 1 or 2."
+            return 'library'
         return 'library'
     elif c == "3":
-        #1 golden spined book
-        #A hollow book.
+        print "This shelf could be classified as 'Miscellaneous' at a bookstore. \nOne of them has a golden spine."
+        print "\n\t1: Read a book. \n\t2: Never mind."
+        c = raw_input("> ")
+        print "\n"
+        if c == "1":
+            print "Vinh picks out the golden spined book. It turns out to be a hollow book."
+            print "\"Well, I never liked reading much anyway.\""
+            return 'library'
+        elif c == "2":
+            return 'library'
+        else:
+            print "Please enter either 1 or 2."
+            return 'library'
         return 'library'
     elif c == "4":
-        print "A recipe book is open to directions for the perfect pancake. \nAttached is a sticky note, reading, \"Pancakes are flat.""
+        global name
+        print "A recipe book is open to directions for the perfect pancake. \nAttached is a sticky note, reading, \"Pancakes are flat.\""
         print "Under that in a drippy red text, \"AND SO ARE YOU.\""
         print "*SLAM*"
-        print "The bookshelves come together with a sticky crimson substance \nin between. It probably used to be you, the player."
+        print "The bookshelves come together with a sticky crimson substance \nin between. It probably used to be %s." % name
         print "\n"
         print "-----CONGRATULATIONS! YOU DIED!-----"
         exit(1)
@@ -230,7 +284,36 @@ def lib_shelves():
         return 'library'
 
 def desk():
-    print "stuff"
+    print "A few books lay open and the chair is pulled out slightly, as if \nsomeone just left momentarily and would return. I sneeze from \n clearing the dust from what appears to be an diary."
+    print "\n\t1: Look at the diary. \n\t2: Look at the other book."
+    c = raw_input("> ")
+    print "\n"
+    if c == "1":
+        # Kiyoko's mother's diary
+        print "The book is a standard brown, with golden trimmings on the spine. \nWe read a few pages of the diary."
+        # print """"stuff""""
+        return 'library'
+    elif c == "2":
+        global name
+        print "It is an encyclopedia of animals. The pages opened display a \ndrawing of two scorpions. These particular ones were fatal \nto humans."
+        print "\n\t1: Turn the page. \n\t2: Never mind."
+        c = raw_input("> ")
+        if c == "1":
+            print "While going to turn the page, my finger brushes the scorpion drawing. \nA shock of pain travels up my arm and my breath is short."
+            print "\"%s, are you okay? Hey!\"" % name
+            print "..."
+            print "Due to failure to treat the sting, %s died within the next few days. \nThe three kids were unable to leave the house." % name
+            print "\n"
+            print "-----CONGRATULATIONS! YOU DIED!-----"
+            exit(1)
+        elif c == "2":
+            return 'library'
+        else:
+            print "Please enter either 1 or 2."
+            return 'library'
+    else:
+        print "Please enter either 1 or 2."
+        return 'library'
 
 # bro's room
 def frame():
@@ -329,6 +412,7 @@ lived there for years. Scouting out the house around Halloween is
 very popular among the (idiotic) students at my school. They all
 say that no one will come back alive if they go inside, but all
 of that sounds like crap to me. Ghosts aren't even real.\n"""
+        raw_input("Press enter to continue.")
         print """"Well, if you're not afraid and think it's nothing, let's go see
 it, then! Nothing will happen, right?" my friend Vinh said.\n"""
         print """He\'s really into the horror genre and dare-devil things. Walking
@@ -338,6 +422,7 @@ Alex, who has a hint of reason, added.\n"""
         print """"If the worst happens, we can just knock the door down. Besides,
 are you a chicken, Alex?" Vinh proceeded to squawk and flap his
 arms around Alex.\n"""
+        raw_input("Press enter to continue.")
         print """"Hey, leave her alone. We can go for five minutes. Anything worth
 seeing will be seen in that amount of time," I said.\n"""
         print """And so it was decided. That Friday evening, we walked to the house
@@ -348,6 +433,7 @@ the doorframes and corners. The only light source, the fading sun
 behind us, cast long shadows on the broken floor. A couple of
 floorboards were missing, loose, or creaked beneath our feet. A
 musty odor permeated through the hallway.\n"""
+        raw_input("Press enter to continue.")
         print "\"Here we are, Vinh. Absolutely nothing to see.\"\n"
         print "\"Hey, don't talk so loudly! What if they ghost can hear us?\"\n"
         print "\"Vinh... you\'re the loud one here.\"\n"
@@ -355,6 +441,7 @@ musty odor permeated through the hallway.\n"""
         print "\"Ah, cut it out. Let\'s leave. I\'m bored.\"\n"
         print """I turned back to the door, which had closed with a thud behind us.
 The door knob rattled in my hand.\n"""
+        raw_input("Press enter to continue.")
         print "\"Um.\"\n"
         print "I tried to turn it again.\n"
         print "\"Why won\'t it open?\"\n"
@@ -371,43 +458,78 @@ way was forward.\n"""
 ## first floor
 class foyer(Scene):
     def enter(self):
+        global loc
+        loc = 'foyer'
         print """We are in the foyer. Careful of the gaps in the floor. There are
 two spiderwebs, one with fly carcasses and another with an active
 spider, pulling its prey towards itself.\n"""
         print "Where will we go?"
         doors('foyer')
-        return door
+        global null
+        if null == True:
+            return 'foyer'
+        else:
+            return door
 
 class dining(Scene):
     def enter(self):
         print "Perhaps at one point the walls were more vibrant, but now they are \na muted green. It\'s a really gross color, actually, like the green on"
         print "the outside of boiled egg yolks. Three frames, hang opposite of the \nentrance, a rectangular table separating us from them."
         action('dining')
-        return door
+        global null
+        if null == True:
+            return 'dining'
+        else:
+            return door
 
 class kitchen(Scene):
     def enter(self):
         print "The floor tiles are half gone, exposing the rotting foundation. \nOther tiles are cracked. Vinh sneezed and the dust particles flew \ninto the last remnants of daylight."
         action('kitchen')
-        return door
+        global null
+        if null == True:
+            return 'kitchen'
+        else:
+            return door
 
 class living(Scene):
     def enter(self):
-        print "This is a description of the living room."
+        global bath1v
+        bath1v = True
+        print "\"Was this the living room? Looks more like the dying room now.\""
+        print "\"If you could stop with the puns. We are stuck in a rotting, \ncreepy house. This is no joke.\""
+        print "\"I'm just trying to lighten the mood, because these moldy \ncurtains sure aren't helping...\""
         action('living')
-        return door
+        global null
+        if null == True:
+            return 'living'
+        else:
+            bath1v = False
+            return door
 
 class bath1(Scene):
     def enter(self):
-        print "This is the first floor bathroom."
+        print "Generally grimy, the bathroom appears to leave us dirtier after \nanyone tries to bathe here. An almost artistic cobweb stretches \nfrom the mirror to the broken lightswitch, a lone spider rolling \nmore fiber."
         action('bath1')
-        return door
+        global null
+        if null == True:
+            return 'bath1'
+        else:
+            return door
 
 class library(Scene):
     def enter(self):
-        print "This is the library."
+        global bath1v
+        bath1v = True
+        print "\"I love this room!\" Alex exclaimed. It was the least terrible one \nwe had come across so far. The shelves are stacked with books"
+        print "of all colors, although faded from the sun. A thick layer of dust \ncovered the reddish brown wood. No fingerprints to be seen."
         action('library')
-        return door
+        global null
+        if null == True:
+            return 'library'
+        else:
+            bath1v = False
+            return door
 
 class basement(Scene):
     def enter(self):
@@ -416,56 +538,90 @@ class basement(Scene):
 
 class stairs(Scene):
     def enter(self):
+        global hammerv
+        global loc
         if hammerv != True:
             print "The stairs are padlocked. You cannot get through.\n"
             return 'foyer'
-        if upstairs % 2 == 0:
-            print "You are now on the first floor."
-        else:
-            print "You are now on the second floor."
+        if loc == 'foyer':
+            print "We head upstairs."
+            return 'hallway'
+        elif loc == 'hallway':
+            print "We head downstairs."
+            return 'foyer'
 
 ## second floor
 class hallway(Scene):
     def enter(self):
+        global loc
+        loc = 'hallway'
         print "This is the upstairs central hallway."
-        door('hallway')
-        return door
+        doors('hallway')
+        global null
+        if null == True:
+            return 'hallway'
+        else:
+            return door
 
 class p_room(Scene):
     def enter(self):
         print "This is Kiyoko's parents' room."
         action('p_room')
-        return door
+        global null
+        if null == True:
+            return 'p_room'
+        else:
+            return door
 
 class bathp(Scene):
     def enter(self):
         print "This is the parents' bathroom."
         action('bathp')
-        return door
+        global null
+        if null == True:
+            return 'bathp'
+        else:
+            return door
 
 class b_room(Scene):
     def enter(self):
         print "This is Kiyoko's brother's room."
         action('b_room')
-        return door
+        global null
+        if null == True:
+            return 'b_room'
+        else:
+            return door
 
 class bathj(Scene):
     def enter(self):
         print "This is the joint bathroom."
         action('bathj')
-        return door
+        global null
+        if null == True:
+            return 'bathj'
+        else:
+            return door
 
 class k_room(Scene):
     def enter(self):
         print "This is Kiyoko's room."
         action('k_room')
-        return door
+        global null
+        if null == True:
+            return 'k_room'
+        else:
+            return door
 
 class c_room(Scene):
     def enter(self):
         print "This is the computer room."
         action('c_room')
-        return door
+        global null
+        if null == True:
+            return 'c_room'
+        else:
+            return door
 
 class attic(Scene):
     def enter(self):
@@ -538,6 +694,7 @@ class Map(object):
 
 ## mapping function
 def doors(room):
+    null = False
     if isfunction(doors_dict[room]) == True:
         doors_dict[room]()
     else:
@@ -545,6 +702,9 @@ def doors(room):
     r = raw_input("\n> ")
     print "\n"
     global door
+    global bath1v
+    global bathpv
+    global bathjv
     if r in dining_list:
         door = 'dining'
     elif r in living_list:
@@ -578,8 +738,9 @@ def doors(room):
     elif r in attic_list:
         door = 'attic'
     else:
+        global null
+        null = True
         print "That is not a room in this house."
-
 
 ## items function
 def item(room):
@@ -598,6 +759,18 @@ def item(room):
         idict = bath1_items
     if room == 'kitchen':
         idict = kitchen_items
+    if room == 'b_room':
+        idict = b_room_items
+    if room == 'p_room':
+        idict = p_room_items
+    if room == 'bathp':
+        idict = bathp_items
+    if room == 'bathj':
+        idict = bathj_items
+    if room == 'k_room':
+        idict = k_room_items
+    if room == 'c_room':
+        idict = c_room_items
     if t not in idict:
         print "That item is not in this room."
     elif isfunction(idict[t]) == True:
