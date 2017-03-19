@@ -64,7 +64,9 @@ hammerv = False
 crowbarv = False
 screwdriverv = False
 knifev = False
-small_key = False
+small_key = False # something is wrong with this - doesn't work at bathtub2
+codev = False
+a_key = False
 
 # conditionals
 bath1v = False
@@ -242,7 +244,31 @@ def lib_shelves():
         c = raw_input("> ")
         print "\n"
         if c == "1":
-            # A science text about Jose Delgado
+            print """Jose Manuel Rodriguez Delgado is known for his work with neural
+pacemakers. With these, he could control the actions of animals
+by electrical brain stimulation. In one experiment, he inplanted
+a stimoceiver, one type of pacemaker, into a bull's head. Inside
+a bullring, acting as a matador, he was able to stop the bull in
+its tracks right before it ran into him by pressing a button on
+a remote."""
+            print "\nPress enter to continue.\n"
+            raw_input("> ")
+            print """He went on to apply these studies to treat certain diseases in
+humans. Stimulation via electrodes to the brain changed the mood
+and behavior of several patients, even acting out of character.
+However, this practice did not have an immediate medical purpose,
+so the "button activated joy-box" lost its popularity."""
+            print "\nPress enter to continue.\n"
+            raw_input("> ")
+            print """Still, he persisted. After conducting experiments with a community
+of gibbons, he proposed that the remote could help control society.
+For example, if an implant in a person's brain can detect changes in
+brainwaves that reflect psychotic activity, the authorities can be
+informed of this and send back waves to stabilize the person. He
+published his theories in "Physical Control of the Mind: Toward a
+Psychocivilized Society." He suggested that neurotechnology can
+produce "a less cruel, happier, and better man."""
+            print "\nI can't imagine that text would have been very popular."
             return 'library'
         elif c == "2":
             return 'library'
@@ -257,7 +283,175 @@ def lib_shelves():
         c = raw_input("> ")
         print "\n"
         if c == "1":
-            # A children's tale
+            print """There was a young girl named Chiaki. She was playing in her
+bedroom when she heard her mother calling her from the kitchen.
+She raced downstairs.
+
+"Chiaki, come here. I have something to ask you," her mother said.
+
+"What is it?" asked Chiaki.
+
+"Do you know who ate the cakes that were meant for the guests?"
+
+"Uh... No... I don't know," Chiaki replied.
+
+"Did you eat the cakes?" her mother asked.
+
+"No, Mama, I didn't," the little girl replied.
+
+Chiaki was wringing her hands nervously."""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """"Chiaki, I know when you are lying," her mother said. "A thief always
+starts out in life by lying. And the police always catch a thief. And the
+thief is always punished. Do you know what I am saying Chiaki?"
+
+Chiaki couldn't bear the guilt anymore. She started sobbing.
+
+"Mama, I'm sorry!" she wailed. "I ate the cakes! I'm sorry!"
+
+"There, there. Stop crying," said her mother as she held her hand. "I
+was angry because you lied to me. Now you've told the truth,
+everything is going to be fine. I don't like liars, so never lie to me
+again, OK?"
+
+"OK," said Chiaki.
+
+"Now dry your tears," said her mother. "We'll go to the store and buy
+more cakes."
+
+"OK, Mama," Chiaki said."""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """Chiaki's mother had a baby. When she came home from the hospital,
+Chiaki was delighted.
+
+"This is Nana," her mother said. "You're her big sister. You have to
+treat her with love and care."
+
+"I will, Mama," Chiaki said.
+
+But after the baby arrived, her mother didn't seem to have any time
+for her. The baby cried all day and all night. Chiaki couldn't bear to
+hear it screaming and bawling. She couldn't concentrate. She
+couldn't even think. Eventually, she had enough."""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """"Mama! I'm sick and tired of hearing her cry!" she shouted. "I can't
+study with all this racket! Can you please shut her up?"
+
+"You need to be more understanding," her mother said. "Nana is just
+a baby. You're her big sister."
+
+"But you're always with Nana," Chiaki cried. "You never have time for
+me anymore. I'd like to spend time with you too, Mama. I'd like to go
+to the store with you, to the park with you, cuddle with you..."
+
+"You're old enough to go to all those places by yourself," her mother
+said. "So shut your mouth and stop being so selfish."
+
+"I hate you!" Chiaki screamed as she burst into tears."""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """She ran upstairs, slammed her door and locked herself in her room.
+That evening, she refused to come down for dinner. Instead, she
+stayed in her room and brooded about Nana.
+
+That night Chiaki had a very disturbing dream. In the nightmare, she
+saw herself walking through the house in darkness. She went into
+her mother's room and tip-toed over to the baby's crib. Then, she
+picked up her little sister and carried her downstairs.
+
+In the dream, Chiaki opened the back door and brought Nana out to
+the garden. There, by the light of the moon, she fetched a shovel
+from the shed, dug a little hole in the wet grass and buried her little
+sister alive.
+
+When she woke up in the morning, Chiaki was shaking and covered
+in sweat. She felt sick to her stomach. The nightmare had seemed so
+real. She was horrified."""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """"Mom was right," she thought. "Nana is just a baby. I'm her big sister.
+I need to learn to put up with things like this. I'm going to ask Mom
+to forgive me."
+
+Just then, her mother burst into her room. Tears were streaming
+down her face.
+
+"Chiaki, do you know where Nana is?" she asked. "When I woke up
+this morning, she wasn't in her crib. Do you know anything?"
+The little girl shook her head.
+
+"Are you sure?" her mother demanded. "You really don't know
+anything? Do you swear?"
+
+Chiaki gulped. "Yes, I swear," she said weakly.
+
+"Alright! Alright!" her mother said. "Help me find her!\""""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """They searched the house from top to bottom, but they couldn't find
+Nana. They ran up and down the street looking for the baby, but she
+was nowhere to be seen. Finally, her mother fell to her knees and
+began sobbing uncontrollably.
+
+"Where did Nana go?" she wailed. "Where could she be? She doesn't
+even know how to walk. How could she disappear like this?"
+Chiaki was wringing her hands nervously.
+
+"Chiaki you know something!" her mother screamed. "Chiaki! You
+know what happened to Nana, don't you!\""""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """"No," said Chiaki. "I don't know anything..."
+
+"Chiaki, I warned you not to lie to me again!" her mother screamed.
+"I'm not lying," Chiaki mumbled.
+
+"I know when you're lying!" her mother shouted. "Tell me! Where is
+she? Where is Nana?"
+
+Chiaki couldn't bear the guilt anymore. She looked out the window
+and pointed at a little mound of earth in the garden.
+
+"No!" her mother cried. "Dear God! No! This can't be true!\""""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """"Mama!" the little girl sobbed. She tried to grab her mother's hand.
+"Don't touch me!" her mother screamed. "You killed Nana, didn't you!
+You killed her because you were jealous!"
+
+"I didn't mean it, Mama!" Chiaki cried. "I didn't mean it!"
+
+Her mother flew into a violent rage. She grabbed her daughter by the
+neck and began choking the life out of her. She squeezed and
+squeezed until she couldn't squeeze anymore. By the time she came
+to her senses, Chiaki lay dead on the kitchen floor.
+
+Suddenly, the doorbell rang."""
+            print "\nPress enter to continue."
+            raw_input("> ")
+            print "\n"
+            print """The mother got to her feet and answered it.
+
+When she opened the door, she saw her neighbor standing outside.
+He was holding Nana in his arms.
+
+"We found her crawling around outside," he said. "She must have
+gotten out of her crib during the night. Good thing we found her
+before something bad happened...\""""
+            print "\n..."
+            print "Well that wasn't disturbing at all."
+# http://www.scaryforkids.com/white-lies/
             return 'library'
         elif c == "2":
             return 'library'
@@ -272,7 +466,7 @@ def lib_shelves():
         c = raw_input("> ")
         print "\n"
         if c == "1":
-            print "Vinh picks out the golden spined book. It turns out to be a hollow book."
+            print "Vinh picks out the golden spined book. It turns out to be a \nhollow book."
             print "\"Well, I never liked reading much anyway.\""
             return 'library'
         elif c == "2":
@@ -300,9 +494,27 @@ def desk():
     c = raw_input("> ")
     print "\n"
     if c == "1":
-        # Kiyoko's mother's diary
         print "The book is a standard brown, with golden trimmings on the spine. \nWe read a few pages of the diary."
-        # print """"stuff""""
+        print """It has been harder for me to give the kids a good impression.
+Hiroto and I continue to argue and I don't think we can hide it
+from them any longer.
+
+One positive thing is that Akira is starting to feel better slowly.
+I'm glad that even if I can improve my own situation, he is doing
+well. It seems Kiyoko is keeping him company every day, like the
+good girl she is. That and the medication will cure him."""
+        print "\nPress enter to continue."
+        raw_input("> ")
+        print "\n"
+        print """Suddenly all that progress sank down the drain. As if a whirlpool
+stole it in front of my very eyes. Akira still smiles but his eyes
+appear duller and duller. Kiyoko is still determined to cheer him
+up. I depend on her when I cannot can him myself."""
+        print "\nPress enter to continue."
+        raw_input("> ")
+        print "\n"
+        print "I cannot continue to live with myself, with the knowledge that I..."
+        print "\nThe page is torn."
         return 'library'
     elif c == "2":
         global name
@@ -345,6 +557,7 @@ def frame():
         code = True
         print "The photo shows a scan code."
         inventory.update({'photo': "Put together from pieces around the second floor. This code can be used with a mobile camera."})
+        del inventory['photo piece']
         return 'b_room'
 
 # parent's room
@@ -381,6 +594,8 @@ def bathtub2():
 
 # kiyoko's room
 def books():
+    global codev
+    global a_key
     print "Several science books are stacked near the bed. One book stands \nout from the rest, having a lock on it."
     print "Open the book?"
     print "\n\t1: Yes. \n\t2: No."
@@ -389,6 +604,7 @@ def books():
     if c == "1":
         if codev == True:
             print "The book opened to reveal the pages are cut out. Another hollow \nbook. Inside is a key labelled for the attic. Would have been nicer \nif it were for the front door."
+            a_key = True
             return 'k_room'
         else:
             print "The lock is real. We will need a key or something."
@@ -439,6 +655,7 @@ def desktop():
         return 'c_room'
 
 def wires():
+    global friendship
     print "A haphazardous pile of wires lay near the television. \"What is this \ndoing here?\""
     print "Alex suddenly looks concerned, but she was scared since she came inside."
     print "\n\t1: Leave her alone. \n\t2: Ask her what's wrong."
@@ -469,6 +686,15 @@ def wires():
         print "Please enter either 1 or 2."
         return 'c_room'
 
+def a_stairs():
+    if a_key == True:
+        print "\"Are you sure we should go up there?\" the girl said. \"It's \nprobably dangerous.\""
+        print "\"Where else do we have to go?\""
+        print "With that, we unlocked the door and climbed up."
+        return 'attic'
+    else:
+        print "We need the attic stairs key."
+        return 'c_room'
 
 ## inventory dictionaries
 living_items = {'couch': "A few of the springs poked out from under the fabric. We \ndiscovered this only after Vinh flopped onto the couch \nand cut himself.\n",
@@ -512,10 +738,10 @@ k_room_items = {'dresser': "The drawers are locked. The countertop appears to ha
     'bed': "The bed has only a frame and a mattress.",
     'books': books,
     }
-c_room = {'desktop': desktop,
+c_room_items = {'desktop': desktop,
     'wires': wires,
     'television': "For some reason, this television still works. That static noise \nfills the mostly empty room. It occasionally switches to a music station.",
-    }
+    'stairs': a_stairs,}
 
 class Scene(object):
     def enter(self):
@@ -606,7 +832,7 @@ class foyer(Scene):
             print "\n\"Well, when I heard the door I got scared so I hid in a closet \nI found. Although, a bit later I thought it could be my friends, \nbut you all sound quite different, so...\""
             print "\nI'd read enough books to know not to trust strangers. Especially \nthe ones you find in haunted houses. But you can make use of \nyour enemies, too. Four minds are better than three. Maybe."
             print "\n\"We'll be your new friends! Your other 'friends' suck. Let's \nget out of here together!\" the sometimes chivalrous Vinh said."
-            print "The girl smiled. \"Okay!\""
+            print "\nThe girl smiled. \"Okay!\""
         else:
             print """We are in the foyer. Careful of the gaps in the floor. There are
 two spiderwebs, one with fly carcasses and another with an active
@@ -714,12 +940,15 @@ class hallway(Scene):
 
 class p_room(Scene):
     def enter(self):
+        global bathpv
+        bathpv = True
         print "The large bedroom looked rather empty because of its few furnishings \nand bare walls. Surprisingly, the electricity still worked in this room... \nA few cobwebs in the corner cast spindly shadows on the walls."
         action('p_room')
         global null
         if null == True:
             return 'p_room'
         else:
+            bathpv = False
             return door
 
 class bathp(Scene):
@@ -734,12 +963,15 @@ class bathp(Scene):
 
 class b_room(Scene):
     def enter(self):
+        global bathjv
+        bathjv = True
         print "The clutter around the room makes it appear lived in, but a coat \nof dust over everything tells otherwise. Whoever lived here made \nthe most of their room."
         action('b_room')
         global null
         if null == True:
             return 'b_room'
         else:
+            bathjv = False
             return door
 
 class bathj(Scene):
@@ -764,7 +996,8 @@ class k_room(Scene):
 
 class c_room(Scene):
     def enter(self):
-        print "The room is mostly empty, but it looks to be a good environment \nfor work or study. It partially looks to be for technological \nstorage, as well."
+        print "The room is mostly empty, but it looks to be a good environment \nfor work or study. It partially looks to be for technological"
+        print "storage, as well. What appears to be pull down stairs takes up \npart of the ceiling."
         action('c_room')
         global null
         if null == True:
@@ -953,8 +1186,6 @@ def action(room):
     else:
         print "Please enter 1 or 2."
         return room
-
-## plot event (key dialogue) function
 
 a_map = Map('Intro')
 a_game = Engine(a_map)
